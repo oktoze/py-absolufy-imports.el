@@ -1,0 +1,27 @@
+* py-absolufy-imports.el
+
+An emacs interface to absolufy-imports, to convert relative python imports to absolute and vice versa.
+
+** Dependencies
+Install absolufy-imports python package.
+
+#+BEGIN_SRC bash
+$ pip install absolufy-imports
+#+END_SRC
+
+** Notes
+In order to work, py-absolufy-imports.el need to know the root directory of your code. For this purpose, it looks for an indicator file in the parent directories of the buffer's visiting file. You can customize the list of indicator files using the variable =py-absolufy-imports-root-indicators=. Imports will be converted relative to the first found indicator.
+
+Put an indicator file, such as =.python-root.el= in the root directory of your code.
+
+** Usage
+To convert relative imports to absolute imports:
+
+=M-x py-absolufy-imports-buffer=
+
+To convert absolute imports to relative imports:
+
+=M-x py-absolufy-imports-relativify-buffer=
+
+** Contribution
+Issues and pull requests are welcome.
